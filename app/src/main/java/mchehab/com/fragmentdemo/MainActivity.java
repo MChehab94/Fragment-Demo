@@ -12,7 +12,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        helloFragment = new HelloFragment();
-        getFragmentManager().beginTransaction().add(R.id.frameLayout, helloFragment).commit();
+        if(savedInstanceState == null){
+            helloFragment = new HelloFragment();
+            getFragmentManager().beginTransaction().add(R.id.frameLayout, helloFragment).commit();
+        }
     }
 }
