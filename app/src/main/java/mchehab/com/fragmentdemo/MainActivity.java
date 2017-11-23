@@ -6,6 +6,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     private HelloFragment helloFragment;
+    private HelloSecondFragment helloSecondFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(savedInstanceState == null){
             helloFragment = new HelloFragment();
+            helloSecondFragment = new HelloSecondFragment();
             getFragmentManager().beginTransaction().add(R.id.frameLayout, helloFragment).commit();
+            getFragmentManager().beginTransaction().add(R.id.frameLayoutSecond, helloSecondFragment)
+                    .commit();
         }
     }
 }
